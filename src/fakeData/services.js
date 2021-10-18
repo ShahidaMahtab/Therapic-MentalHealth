@@ -1,0 +1,39 @@
+const services = [
+ {
+  id:1001,
+  img:"",
+  desc:"",
+  title:"",
+  
+ },
+ {
+  id:1002,
+  img:"",
+  desc:"",
+  title:"",
+ },
+ {
+  id:1003,
+  img:"",
+  desc:"",
+  title:"",
+ },
+ {
+  id:1004,
+  img:"",
+  desc:"",
+  title:"",
+ },
+ {
+  id:1005,
+  img:"",
+  desc:"",
+  title:"",
+ },
+ {
+  id:1006,
+  img:"",
+  desc:"",
+  title:"",
+ },
+]
