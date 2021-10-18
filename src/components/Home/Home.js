@@ -2,6 +2,7 @@ import React from "react";
 import banner from "../../images/Banner/background.png";
 import About from "../About/About";
 import Cases from "../Cases/Cases";
+import Doctors from "../Doctors/Doctors";
 const Home = () => {
   return (
     <>
@@ -32,6 +33,7 @@ const Home = () => {
       </div>
       <Cases></Cases>
       <About></About>
+      <Doctors></Doctors>
     </>
   );
 };
