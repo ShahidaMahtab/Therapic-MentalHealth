@@ -1,7 +1,13 @@
-# Getting Started with Create React App
+# Therapic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created using react [Therapic](https://health-care-website-881e9.web.app/).
 
+## Website Details
+* This Website Consist of mainly four section home,about,doctor,services
+* In our about section we have mentioned everything in detail regarding what we treat and how we treat.
+* Inside Services Section , we have details of different causes of mental illness and its treatment.
+* The main purpose of this website is to help people who are suffering from mental illness.
+* We have also the displayed the info of our psychiatrist  
 ## Available Scripts
 
 In the project directory, you can run:

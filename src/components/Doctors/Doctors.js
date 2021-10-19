@@ -22,7 +22,7 @@ const Doctors = () => {
         </h2>
       </div>
       <div>
-        <Row xs={1} md={3} lg={4} className="my-4 mx-auto ps-4 ps-lg-0">
+        <Row xs={1} md={3} lg={4} className="my-4 mx-auto ps-4 ps-lg-0 py-lg-5">
           {doctors.map((doctor) => (
             <Doctor key={doctor.id} doctor={doctor}></Doctor>
           ))}

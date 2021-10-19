@@ -22,7 +22,7 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm(formOptions);
-  const { loginUsingEmail, signInUsingGoogle } = useAuth();
+  const { loginUsingEmail, signInUsingGoogle, setIsLoading } = useAuth();
   const onSubmit = (data) => {
     const { email, password } = data;
     loginUsingEmail(email, password);
@@ -31,9 +31,12 @@ const Login = () => {
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
   const handleGoogleLogin = () => {
-    signInUsingGoogle().then((result) => {
-      history.push(redirect_uri);
-    });
+    setIsLoading(true);
+    signInUsingGoogle()
+      .then((result) => {
+        history.push(redirect_uri);
+      })
+      .finally(() => setIsLoading(false));
   };
   return (
     <Container className="my-5 p-5 d-flex justify-content-center align-item-center">

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab, faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -17,16 +17,31 @@ const Register = () => {
       .min(6, "Password must be at least 6 characters")
       .matches(/(?=.*?[A-Z])/, "Password Must Contain One Uppercase Letter"),
   });
+
   const formOptions = { resolver: yupResolver(validationSchema) };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm(formOptions);
-  const { registerUsingEmail, signInUsingGoogle, setUserName } = useAuth();
+
+  const { registerUsingEmail, signInUsingGoogle, setIsLoading } = useAuth();
   const onSubmit = (data) => {
     const { email, password } = data;
     registerUsingEmail(email, password);
+  };
+
+  const history = useHistory();
+  const location = useLocation();
+  const redirect_uri = location.state?.from || "/home";
+  const handleGoogleLogin = () => {
+    setIsLoading(true);
+    signInUsingGoogle()
+      .then((result) => {
+        history.push(redirect_uri);
+      })
+      .finally(() => setIsLoading(false));
   };
   return (
     <Container className="my-5 p-5 d-flex justify-content-center align-item-center">
@@ -92,7 +107,7 @@ const Register = () => {
         </form>
         <div>
           <span className="lh-1 mb-0">or sign in with google </span>
-          <button onClick={signInUsingGoogle} className="btn btn-dark rounded">
+          <button onClick={handleGoogleLogin} className="btn btn-dark rounded">
             <FontAwesomeIcon icon={["fab", "google"]} className="text-white" />
           </button>
         </div>

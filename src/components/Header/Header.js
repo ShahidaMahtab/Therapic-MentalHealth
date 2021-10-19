@@ -23,7 +23,7 @@ const Header = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
+            <Nav className="ms-auto d-flex align-items-center">
               <Nav.Link as={Link} to="/home" className="text-decoration-none">
                 <h5 className="fs-5 me-3 header-text fw-bold">Home</h5>
               </Nav.Link>
@@ -52,8 +52,11 @@ const Header = () => {
                 <h5 className="fs-5 me-3 header-text fw-bold">signup</h5>
               </Nav.Link>
               {user?.email ? (
-                <button onClick={logOut} className="btn">
-                  LogOut
+                <button
+                  onClick={logOut}
+                  className="border border-0 d-block mb-1 bg-white me-3"
+                >
+                  <span className="header-text fw-bold fs-5"> LogOut</span>
                 </button>
               ) : (
                 <Nav.Link
@@ -64,10 +67,12 @@ const Header = () => {
                   <h5 className="fs-5 me-3 header-text fw-bold">Login</h5>
                 </Nav.Link>
               )}
-              <Navbar.Text>
-                Signed in as:
-                <a href="#login">{user.displayName || user.email}</a>
-              </Navbar.Text>
+              {user.email && (
+                <Navbar.Text className="header-text text-center">
+                  Signed in as:
+                  <a href="#login"> {user.displayName || user.email}</a>
+                </Navbar.Text>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
