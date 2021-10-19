@@ -64,28 +64,30 @@ const Footer = () => {
               </Nav.Link>
             </div>
           </Nav>
-          <div className="text-white me-md-auto mx-auto mt-3 mt-md-0 pe-5 pe-lg-0 text-start">
-            <h3>Contact</h3>
-            <p>
-              <small>therapicCare@gmail.com</small>
-              <br />
-              +88017780409 <br />
-              +88017430459
-            </p>
-            <span className="mt-0  pt-0">
-              <FontAwesomeIcon
-                icon={["fab", "facebook"]}
-                className="text-white fs-5 ms-2 "
-              />
-              <FontAwesomeIcon
-                icon={["fab", "linkedin"]}
-                className="text-white fs-5 ms-2 "
-              />
-              <FontAwesomeIcon
-                icon={["fab", "github"]}
-                className="text-white fs-5 ms-2 "
-              />
-            </span>
+          <div className="text-white mx-auto">
+            <div className="pt-3">
+              <h4>Contact</h4>
+              <p className="text-start">
+                <small>therapicCare@gmail.com</small>
+                <br />
+                +88017780409 <br />
+                +88017430459
+              </p>
+              <span className="mt-0  pt-0">
+                <FontAwesomeIcon
+                  icon={["fab", "facebook"]}
+                  className="text-white fs-5 ms-2 "
+                />
+                <FontAwesomeIcon
+                  icon={["fab", "linkedin"]}
+                  className="text-white fs-5 ms-2 "
+                />
+                <FontAwesomeIcon
+                  icon={["fab", "github"]}
+                  className="text-white fs-5 ms-2 "
+                />
+              </span>
+            </div>
           </div>
         </Container>
       </Navbar>

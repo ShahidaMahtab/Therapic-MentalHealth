@@ -27,6 +27,9 @@ const Header = () => {
               <Nav.Link as={Link} to="/home" className="text-decoration-none">
                 <h5 className="fs-5 me-3 header-text fw-bold">Home</h5>
               </Nav.Link>
+              <Nav.Link as={Link} to="/cases" className="text-decoration-none">
+                <h5 className="fs-5 me-3 header-text fw-bold">SolvedCases</h5>
+              </Nav.Link>
               <Nav.Link as={Link} to="/about" className="text-decoration-none">
                 <h5 className="fs-5 me-3 header-text fw-bold">About</h5>
               </Nav.Link>
@@ -49,14 +52,14 @@ const Header = () => {
                 to="/register"
                 className="text-decoration-none"
               >
-                <h5 className="fs-5 me-3 header-text fw-bold">Sign up</h5>
+                <h5 className="fs-5 me-3 header-text fw-bold">Signup</h5>
               </Nav.Link>
               {user?.email ? (
                 <button
                   onClick={logOut}
                   className="border border-0 d-block mb-1 bg-white me-3"
                 >
-                  <span className="header-text fw-bold fs-5"> Sign out</span>
+                  <span className="header-text fw-bold fs-5"> Signout</span>
                 </button>
               ) : (
                 <Nav.Link

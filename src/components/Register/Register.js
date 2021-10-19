@@ -63,7 +63,7 @@ const Register = () => {
       .finally(() => setIsLoading(false));
   };
   return (
-    <Container className="my-5 p-5 d-flex justify-content-center align-item-center">
+    <Container className="my-5 pt-1 d-flex justify-content-center align-item-center">
       <div className="pt-5">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h4 className="header-text fw-bold">Create an Account</h4>

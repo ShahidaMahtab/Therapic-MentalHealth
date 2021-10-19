@@ -2,7 +2,7 @@ import React from "react";
 import banner from "../../images/Banner/background.png";
 import About from "../About/About";
 import Cases from "../Cases/Cases";
-import Doctors from "../Doctors/Doctors";
+import Services from "../Services/Services";
 const Home = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const Home = () => {
         <div className="d-sm-block d-lg-none">
           <img src={banner} alt="" className="img-fluid" />
         </div>
-        <div className="pt-4 ps-lg-5 ps-3">
+        <div className="pt-4 ms-lg-5 ps-3">
           <small className="text-danger">
             In every problem there is a master key
           </small>
@@ -32,8 +32,7 @@ const Home = () => {
         </div>
       </div>
       <Cases></Cases>
-      <About></About>
-      <Doctors></Doctors>
+      <Services></Services>
     </>
   );
 };
