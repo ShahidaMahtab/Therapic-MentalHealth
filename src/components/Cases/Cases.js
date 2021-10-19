@@ -12,12 +12,12 @@ const Cases = () => {
     <Container className="my-lg-5 mx-auto pt-lg-5">
       <div className="mb-5">
         <p className="pt-4 lh-1 text-center">
-          <small className="text-clr text-capitalize fw-bold">
+          <small className="text-clr text-capitalize fw-bold mt-3">
             cases that we solved
           </small>
         </p>
         <h2 className="header-text fw-bold text-center pb-3">
-          We have Solved More Than 90 % Sases Successfully
+          We have Solved More Than 90 % Cases Successfully
         </h2>
       </div>
       <div className="">
