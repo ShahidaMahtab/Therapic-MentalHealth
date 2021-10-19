@@ -7,7 +7,7 @@ This project was created using react [Therapic](https://health-care-website-881e
 * In our about section we have mentioned everything in detail regarding what we treat and how we treat.
 * Inside Services Section , we have details of different causes of mental illness and its treatment.
 * The main purpose of this website is to help people who are suffering from mental illness.
-* We have also the displayed the info of our psychiatrist  
+* We have also the displayed the information of our psychiatrist  
 ## Available Scripts
 
 In the project directory, you can run:
