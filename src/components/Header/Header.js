@@ -57,9 +57,9 @@ const Header = () => {
               {user?.email ? (
                 <button
                   onClick={logOut}
-                  className="border border-0 d-block mb-1 bg-white me-3"
+                  className="border border-0 rounded py-1 header-btn d-block mb-1  me-3"
                 >
-                  <span className="header-text fw-bold fs-5"> Signout</span>
+                  <span className="text-white"> logout</span>
                 </button>
               ) : (
                 <Nav.Link
