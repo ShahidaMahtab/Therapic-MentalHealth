@@ -49,14 +49,14 @@ const Header = () => {
                 to="/register"
                 className="text-decoration-none"
               >
-                <h5 className="fs-5 me-3 header-text fw-bold">signup</h5>
+                <h5 className="fs-5 me-3 header-text fw-bold">Sign up</h5>
               </Nav.Link>
               {user?.email ? (
                 <button
                   onClick={logOut}
                   className="border border-0 d-block mb-1 bg-white me-3"
                 >
-                  <span className="header-text fw-bold fs-5"> LogOut</span>
+                  <span className="header-text fw-bold fs-5"> Sign out</span>
                 </button>
               ) : (
                 <Nav.Link
@@ -70,7 +70,9 @@ const Header = () => {
               {user.email && (
                 <Navbar.Text className="header-text text-center">
                   Signed in as:
-                  <a href="#login"> {user.displayName || user.email}</a>
+                  <a href="#login" className="text-decoration-none">
+                    {user.displayName || user.email}
+                  </a>
                 </Navbar.Text>
               )}
             </Nav>

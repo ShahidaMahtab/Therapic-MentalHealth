@@ -22,22 +22,36 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm(formOptions);
-  const { loginUsingEmail, signInUsingGoogle, setIsLoading } = useAuth();
+  const { loginUsingEmail, signInUsingGoogle, setIsLoading, error, setError } =
+    useAuth();
   const onSubmit = (data) => {
     const { email, password } = data;
-    loginUsingEmail(email, password);
+    handleEmailSignIn(email, password);
   };
   const history = useHistory();
   const location = useLocation();
   const redirect_uri = location.state?.from || "/home";
+
   const handleGoogleLogin = () => {
     setIsLoading(true);
     signInUsingGoogle()
       .then((result) => {
         history.push(redirect_uri);
       })
+      .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   };
+
+  const handleEmailSignIn = (email, password) => {
+    loginUsingEmail(email, password)
+      .then((result) => {
+        history.push(redirect_uri);
+        console.log(result.user);
+      })
+      .catch((error) => setError(error.message))
+      .finally(() => setIsLoading(false));
+  };
+
   return (
     <Container className="my-5 p-5 d-flex justify-content-center align-item-center">
       <div>
@@ -76,6 +90,7 @@ const Login = () => {
                 }`}
               />
               <div className="invalid-feedback">{errors.password?.message}</div>
+              {<small className="text-danger">{error ? error : " "}</small>}
             </div>
           </div>
           <button type="submit" className="btn btn-clr text-white">

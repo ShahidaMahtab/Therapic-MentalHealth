@@ -26,10 +26,18 @@ const Register = () => {
     formState: { errors },
   } = useForm(formOptions);
 
-  const { registerUsingEmail, signInUsingGoogle, setIsLoading } = useAuth();
+  const {
+    registerUsingEmail,
+    signInUsingGoogle,
+    setIsLoading,
+    error,
+    setError,
+    setUserName,
+  } = useAuth();
+
   const onSubmit = (data) => {
-    const { email, password } = data;
-    registerUsingEmail(email, password);
+    const { email, password, name } = data;
+    handleEmailSignUp(email, password, name);
   };
 
   const history = useHistory();
@@ -41,11 +49,22 @@ const Register = () => {
       .then((result) => {
         history.push(redirect_uri);
       })
+      .catch((error) => setError(error.message))
+      .finally(() => setIsLoading(false));
+  };
+  const handleEmailSignUp = (email, password, name) => {
+    registerUsingEmail(email, password)
+      .then((result) => {
+        history.push(redirect_uri);
+        console.log(result.user);
+        setUserName(name);
+      })
+      .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   };
   return (
     <Container className="my-5 p-5 d-flex justify-content-center align-item-center">
-      <div>
+      <div className="pt-5">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h4 className="header-text fw-bold">Create an Account</h4>
           <label htmlFor="inputName" className="">
@@ -63,9 +82,7 @@ const Register = () => {
               )}
             </div>
           </div>
-          <label htmlFor="inputEmail3" className="">
-            Email
-          </label>
+          <label htmlFor="inputEmail3">Email</label>
           <div className="row mb-3">
             <div className="col-sm-10">
               <input
@@ -96,6 +113,11 @@ const Register = () => {
                 }`}
               />
               <div className="invalid-feedback">{errors.password?.message}</div>
+              {
+                <small className="text-danger m-0 p-0">
+                  {error ? error : " "}
+                </small>
+              }
             </div>
           </div>
           <button type="submit" className="btn btn-clr text-white">

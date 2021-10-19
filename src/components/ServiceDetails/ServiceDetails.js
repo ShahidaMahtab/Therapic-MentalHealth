@@ -15,26 +15,25 @@ const ServiceDetails = () => {
   );
   return (
     <Container className="mt-5">
-      <div className="pt-5">
-        <h2 className="header-text text-center fw-bold">
-          What is {matchedId?.title} ?
-        </h2>
-        <p className="text-dark text-center my-4">{matchedId?.def}</p>
+      <h2 className="pt-5 header-text fw-bold text-center mb-5">
+        {matchedId?.title}
+      </h2>
+      <div className="d-flex justify-content-center">
+        <img src={matchedId?.img} alt="" className="img-fluid" />
       </div>
-      <div className="d-lg-flex justify-content-center">
-        <div className="pe-5">
-          <h2 className="header-text fw-bold">Causes:</h2>
-          <p> {matchedId?.causes}</p>
-          <br />
-          <br />
-          <h2 className="header-text fw-bold">Treatment:</h2>
-          {matchedId?.treatment}
-        </div>
-        <div className="ps-5 pt-5">
-          <img src={matchedId?.img} alt="" />
-          <p className="text-center">
-            <small>{matchedId?.title} treatment</small>
-          </p>
+      <p className="p-0 m-0 text-center">
+        <small>{matchedId?.title} treatment</small>
+      </p>
+      <div className="mt-5">
+        <h2 className="text-dark">What is {matchedId?.title} ?</h2>
+        <p className="my-lg-4">{matchedId?.def}</p>
+      </div>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="">
+          <h2 className="text-dark text-center text-lg-start">Causes:</h2>
+          <p className="my-lg-4"> {matchedId?.causes}</p>
+          <h2 className="text-dark  text-center text-lg-start">Treatment:</h2>
+          <p className="my-lg-4"> {matchedId?.treatment}</p>
         </div>
       </div>
     </Container>

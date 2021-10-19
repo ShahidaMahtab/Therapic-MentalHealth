@@ -3,6 +3,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  updateProfile,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -15,28 +16,33 @@ const useFirebase = () => {
   const googleProvide = new GoogleAuthProvider();
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
   //email register
   const registerUsingEmail = (email, password) => {
-    // setIsLoading(true);
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
-      setUser(result.user);
-      console.log("signup");
-    });
-    // .finally(() => setIsLoading(false));
+    setIsLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
   };
+
   //email login
   const loginUsingEmail = (email, password) => {
-    // setIsLoading(true);
-    signInWithEmailAndPassword(auth, email, password).then((result) => {
-      setUser(result.user);
-      console.log("signIn");
-    });
-    // .finally(() => setIsLoading(false));
+    setIsLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
   };
+
   //google signIn
   const signInUsingGoogle = () => {
     return signInWithPopup(auth, googleProvide);
   };
+  //update profile
+  const setUserName = (name) => {
+    console.log(name);
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    })
+      .then(() => {})
+      .catch((error) => setError(error.message));
+  };
+
   //logout
   const logOut = () => {
     setIsLoading(true);
@@ -45,6 +51,7 @@ const useFirebase = () => {
         setUser({});
         console.log("signedout");
       })
+      .catch((error) => setError(error.message))
       .finally(() => setIsLoading(false));
   };
   useEffect(() => {
@@ -57,15 +64,18 @@ const useFirebase = () => {
       setIsLoading(false);
     });
   }, []);
+
   return {
     user,
-    // isLoading,
+    isLoading,
+    error,
     logOut,
     registerUsingEmail,
     loginUsingEmail,
     signInUsingGoogle,
+    setUserName,
     setIsLoading,
-    isLoading,
+    setError,
   };
 };
 export default useFirebase;
