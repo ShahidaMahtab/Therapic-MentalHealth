@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
-import icon from "../../images/medical.png";
 import Case from "../Case/Case";
 const Cases = () => {
   const [cases, setCases] = useState([]);

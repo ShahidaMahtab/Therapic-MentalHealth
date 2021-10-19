@@ -1,0 +1,104 @@
+import React from "react";
+import { Container } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import useAuth from "../../hooks/useAuth";
+library.add(fab, faGoogle);
+
+const Register = () => {
+  const validationSchema = Yup.object().shape({
+    password: Yup.string()
+      .required("Password is required")
+      .min(6, "Password must be at least 6 characters")
+      .matches(/(?=.*?[A-Z])/, "Password Must Contain One Uppercase Letter"),
+  });
+  const formOptions = { resolver: yupResolver(validationSchema) };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm(formOptions);
+  const { registerUsingEmail, signInUsingGoogle, setUserName } = useAuth();
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    registerUsingEmail(email, password);
+  };
+  return (
+    <Container className="my-5 p-5 d-flex justify-content-center align-item-center">
+      <div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h4 className="header-text fw-bold">Create an Account</h4>
+          <label htmlFor="inputName" className="">
+            Name
+          </label>
+          <div className="row mb-3">
+            <div className="col-sm-10">
+              <input
+                className="form-control"
+                placeholder="username"
+                {...register("name", { required: true })}
+              />
+              {errors.name && (
+                <span className="text-danger">This field is required</span>
+              )}
+            </div>
+          </div>
+          <label htmlFor="inputEmail3" className="">
+            Email
+          </label>
+          <div className="row mb-3">
+            <div className="col-sm-10">
+              <input
+                type="email"
+                className="form-control"
+                placeholder="abc@def.com"
+                {...register("email", {
+                  required: true,
+                  pattern: "abcd@def.com",
+                })}
+              />
+              {errors.email && (
+                <span className="text-danger">This field is required</span>
+              )}
+            </div>
+            <label htmlFor="inputEmail3" className="">
+              password
+            </label>
+          </div>
+          <div className="row mb-3">
+            <div className="col-sm-10 ">
+              <input
+                type="password"
+                placeholder="Password"
+                {...register("password")}
+                className={`form-control ${
+                  errors.password ? "is-invalid" : ""
+                }`}
+              />
+              <div className="invalid-feedback">{errors.password?.message}</div>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-clr text-white">
+            Signup
+          </button>
+          <p className="mt-3">
+            Already registerd? <Link to="/login">signIn</Link>
+          </p>
+        </form>
+        <div>
+          <span className="lh-1 mb-0">or sign in with google </span>
+          <button onClick={signInUsingGoogle} className="btn btn-dark rounded">
+            <FontAwesomeIcon icon={["fab", "google"]} className="text-white" />
+          </button>
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export default Register;

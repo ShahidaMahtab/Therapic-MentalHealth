@@ -13,7 +13,6 @@ const ServiceDetails = () => {
   const matchedId = serviceDetail.find(
     (service) => service.id === parseInt(serviceid)
   );
-  console.log(matchedId);
   return (
     <Container className="mt-5">
       <div className="pt-5">
