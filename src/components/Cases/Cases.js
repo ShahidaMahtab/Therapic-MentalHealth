@@ -12,7 +12,7 @@ const Cases = () => {
     <Container className="mx-auto pt-lg-5">
       <div className="mb-5">
         <h2 className="header-text fw-bold text-center pb-3">
-          We have Solved More Than 90 % Cases Successfully
+          We have Solved More Than 90% Cases Successfully
         </h2>
       </div>
       <div className="mx-auto">
