@@ -6,7 +6,7 @@ const Doctor = ({ doctor }) => {
   return (
     <div>
       <Col>
-        <Card className="h-100" style={{ width: "16rem" }}>
+        <Card className="h-100 mx-auto shadow" style={{ width: "16rem" }}>
           <Card.Img variant="top" src={img} className="img-fluid" />
           <Card.Body>
             <Card.Title>{name}</Card.Title>

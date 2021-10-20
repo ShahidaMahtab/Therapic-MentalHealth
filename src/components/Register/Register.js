@@ -98,7 +98,7 @@ const Register = () => {
                 <span className="text-danger">This field is required</span>
               )}
             </div>
-            <label htmlFor="inputPassword" className="">
+            <label htmlFor="inputPassword">
               password
             </label>
           </div>

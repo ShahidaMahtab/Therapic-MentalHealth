@@ -63,21 +63,21 @@ const Footer = () => {
                 Home
               </Nav.Link>
               <Nav.Link href="#link" className="text-light">
-                Service
+                About
               </Nav.Link>
               <Nav.Link href="#link" className="text-light">
-                About
+                Service
               </Nav.Link>
             </div>
             <div>
               <Nav.Link href="#home" className="text-light">
-                Counselors
+                Blog
               </Nav.Link>
               <Nav.Link href="#link" className="text-light">
-                Psychatrist
+                Health
               </Nav.Link>
               <Nav.Link href="#link" className="text-light">
-                Doctors
+                News
               </Nav.Link>
             </div>
             <div>
@@ -100,7 +100,7 @@ const Footer = () => {
               {emailIcon} therapic@gmail.com
             </Nav.Link>
             <Nav.Link href="#link" className="text-light">
-              {locationIcon} 021 Hollywood Boulevard, LA
+              {locationIcon} sylhet-3100,Bangladesh
             </Nav.Link>
           </div>
         </Container>

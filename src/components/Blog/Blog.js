@@ -17,7 +17,7 @@ const Blog = () => {
         </p>
         <h2 className="fw-bold header-text text-center">Our Latest News</h2>
       </div>
-      <div className="my-5 mx-auto px-5">
+      <div className="my-5 mx-auto">
         <Row xs={1} md={2} lg={3} className="mx-auto gy-5">
           {articles.map((article) => (
             <News article={article} key={article.id}></News>

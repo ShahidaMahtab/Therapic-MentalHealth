@@ -6,7 +6,10 @@ const Case = ({ cases }) => {
   return (
     <div>
       <Col>
-        <Card className="border border-0 mx-auto" style={{ width: "16rem" }}>
+        <Card
+          className="border border-0 mx-auto h-100"
+          style={{ width: "16rem" }}
+        >
           <div className="btn-clr w-25 ms-3 rounded">
             <img src={img} alt="" className="img-fluid py-1 ps-3" />
           </div>

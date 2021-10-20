@@ -14,8 +14,8 @@ const ServiceDetails = () => {
     (service) => service.id === parseInt(serviceid)
   );
   return (
-    <Container className="mt-5">
-      <h2 className="pt-5 header-text fw-bold text-center mb-5">
+    <Container className="mt-5 h-100">
+      <h2 className="pt-5 header-text fw-bold text-center mb-5 text-uppercase">
         {matchedId?.title}
       </h2>
       <div className="d-flex justify-content-center">

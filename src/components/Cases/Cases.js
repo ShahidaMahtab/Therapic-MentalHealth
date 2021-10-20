@@ -15,7 +15,7 @@ const Cases = () => {
           We have Solved More Than 90 % Cases Successfully
         </h2>
       </div>
-      <div className="">
+      <div className="mx-auto">
         <Row xs={1} md={2} lg={4} className="mx-auto">
           {cases.map((cs) => (
             <Case cases={cs} key={cs.id}></Case>

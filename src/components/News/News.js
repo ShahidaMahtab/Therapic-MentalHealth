@@ -6,7 +6,7 @@ const News = ({ article }) => {
   return (
     <div>
       <Col>
-        <Card className="h-100 shadow-lg">
+        <Card className="h-100 shadow-lg mx-auto" style={{ width: "18rem" }}>
           <Card.Img variant="top" src={img} className="img-fluid" />
           <Card.Body>
             <Card.Text className="text-secondary text-success fw-bold my-0">

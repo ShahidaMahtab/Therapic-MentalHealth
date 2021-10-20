@@ -11,7 +11,7 @@ const About = () => {
         <div>
           <img src={about} alt="" className="img-fluid" />
         </div>
-        <div className="pb-5 ps-5">
+        <div className="pb-5 ps-lg-5">
           <p className="">
             <small className="text-clr text-capitalize fw-bold">About us</small>
           </p>
@@ -31,7 +31,7 @@ const About = () => {
           <button className="btn btn-clr text-white">Get Appoinment</button>
         </div>
       </div>
-      <div className="d-lg-flex justify-content-center p-5">
+      <div className="d-lg-flex justify-content-center mt-lg-5">
         <div className="pe-lg-5" style={{ borderLeft: "5px solid #058ea0" }}>
           <h4 className="ms-2">{queIcon} What we treat</h4>
           <p className="ms-3 text-wrap">
