@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import About from "./components/About/About";
-import Cases from "./components/Cases/Cases";
+import Blog from "./components/Blog/Blog";
 import AuthProvider from "./components/context/AuthProvider";
 import Doctors from "./components/Doctors/Doctors";
 import Footer from "./components/Footer/Footer";
@@ -27,12 +27,9 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/cases">
-              <Cases></Cases>
-            </Route>
-            <PrivateRoute path="/about">
+            <Route path="/about">
               <About></About>
-            </PrivateRoute>
+            </Route>
             <Route path="/services">
               <Services></Services>
             </Route>
@@ -47,6 +44,9 @@ function App() {
             </Route>
             <PrivateRoute path="/doctors">
               <Doctors></Doctors>
+            </PrivateRoute>
+            <PrivateRoute path="/blog">
+              <Blog></Blog>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

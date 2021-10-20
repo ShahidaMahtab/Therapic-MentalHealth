@@ -25,15 +25,17 @@ const ServiceDetails = () => {
         <small>{matchedId?.title} treatment</small>
       </p>
       <div className="mt-5">
-        <h2 className="text-dark">What is {matchedId?.title} ?</h2>
-        <p className="my-lg-4">{matchedId?.def}</p>
+        <h2 className="text-dark text-center text-lg-start">
+          What is {matchedId?.title} ?
+        </h2>
+        <p className="my-lg-4 text-wrap">{matchedId?.def}</p>
       </div>
       <div className="d-flex justify-content-center align-items-center">
         <div className="">
-          <h2 className="text-dark text-center text-lg-start">Causes:</h2>
-          <p className="my-lg-4"> {matchedId?.causes}</p>
+          <h2 className="text-dark text-center text-lg-start ">Causes:</h2>
+          <p className="my-lg-4 text-wrap"> {matchedId?.causes}</p>
           <h2 className="text-dark  text-center text-lg-start">Treatment:</h2>
-          <p className="my-lg-4"> {matchedId?.treatment}</p>
+          <p className="my-lg-4 text-wrap"> {matchedId?.treatment}</p>
         </div>
       </div>
     </Container>

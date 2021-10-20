@@ -64,7 +64,7 @@ const Register = () => {
   };
   return (
     <Container className="my-5 pt-1 d-flex justify-content-center align-item-center">
-      <div className="pt-5">
+      <div className="border border-1 border-white  p-4 h-100 shadow">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h4 className="header-text fw-bold">Create an Account</h4>
           <label htmlFor="inputName" className="">
@@ -98,7 +98,7 @@ const Register = () => {
                 <span className="text-danger">This field is required</span>
               )}
             </div>
-            <label htmlFor="inputEmail3" className="">
+            <label htmlFor="inputPassword" className="">
               password
             </label>
           </div>

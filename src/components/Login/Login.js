@@ -54,7 +54,7 @@ const Login = () => {
 
   return (
     <Container className="my-5 pt-5 d-flex justify-content-center align-item-center">
-      <div>
+      <div className="border border-1 border-white  p-4 h-100 shadow">
         <form onSubmit={handleSubmit(onSubmit)}>
           <h4 className="mb-3 header-text fw-bold">Sign In To Your Account</h4>
           <label htmlFor="inputEmail3" className="">

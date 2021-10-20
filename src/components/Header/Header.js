@@ -27,9 +27,6 @@ const Header = () => {
               <Nav.Link as={Link} to="/home" className="text-decoration-none">
                 <h5 className="fs-5 me-3 header-text fw-bold">Home</h5>
               </Nav.Link>
-              <Nav.Link as={Link} to="/cases" className="text-decoration-none">
-                <h5 className="fs-5 me-3 header-text fw-bold">SolvedCases</h5>
-              </Nav.Link>
               <Nav.Link as={Link} to="/about" className="text-decoration-none">
                 <h5 className="fs-5 me-3 header-text fw-bold">About</h5>
               </Nav.Link>
@@ -46,6 +43,9 @@ const Header = () => {
                 className="text-decoration-none"
               >
                 <h5 className="fs-5 me-3 header-text fw-bold">Doctors</h5>
+              </Nav.Link>
+              <Nav.Link as={Link} to="/blog" className="text-decoration-none">
+                <h5 className="fs-5 me-3 header-text fw-bold">Blog</h5>
               </Nav.Link>
               <Nav.Link
                 as={Link}
@@ -71,11 +71,10 @@ const Header = () => {
                 </Nav.Link>
               )}
               {user.email && (
-                <Navbar.Text className="header-text text-center">
-                  Signed in as:
-                  <a href="#login" className="text-decoration-none">
-                    {user.displayName || user.email}
-                  </a>
+                <Navbar.Text className="text-center">
+                  <span className="header-text ">
+                    Signed in as : {user.displayName || user.email}
+                  </span>
                 </Navbar.Text>
               )}
             </Nav>

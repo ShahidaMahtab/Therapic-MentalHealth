@@ -12,7 +12,7 @@ const Case = ({ cases }) => {
           </div>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
-            <Card.Text className="text-secondary">{desc}</Card.Text>
+            <Card.Text className="text-secondary text-wrap">{desc}</Card.Text>
           </Card.Body>
         </Card>
       </Col>

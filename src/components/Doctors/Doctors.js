@@ -18,7 +18,7 @@ const Doctors = () => {
           </small>
         </p>
         <h2 className="fw-bold header-text text-center">
-          Meet Our Psychiatrist
+          Meet Our Psychiatrist Team
         </h2>
       </div>
       <div>

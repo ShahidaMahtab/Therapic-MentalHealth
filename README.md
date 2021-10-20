@@ -3,7 +3,7 @@
 This project was created using react [Therapic](https://health-care-website-881e9.web.app/).
 
 ## Website Details
-* This Website is for the People who are Suffering from Mental Disorders and who need serious psychiatrist.
+* This Website is for the People who are Suffering from Mental Disorders and who needs psychiatrist.
 * This Website Consist of mainly four section home,about,doctor,services and our success rate of solved cases.
 * In our about section we have mentioned everything in detail regarding what we treat and how we treat.
 * Inside Services Section , we have details of different causes of mental illness and its treatment.

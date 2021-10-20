@@ -32,6 +32,7 @@ const Home = () => {
         </div>
       </div>
       <Cases></Cases>
+      <About></About>
       <Services></Services>
     </>
   );
