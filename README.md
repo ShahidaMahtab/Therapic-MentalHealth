@@ -3,12 +3,13 @@
 This project was created using react [Therapic](https://health-care-website-881e9.web.app/).
 
 ## Website Details
-* This Website is for the People who are Suffering from Mental Disorders and who needs psychiatrist.
+* Useful for people who are suffering from mental disorders and in need of a therapist.
 * This Website Consist of mainly five section home,about,doctor,services and blog.
 * In our About Section we have mentioned everything in detail regarding what we treat and how we treat.
 * Inside Services Section , we have details of different causes of mental illness and its treatment.
 * We have also displayed the information of our psychiatrist in doctors section.
 * Our Blog Section includes the latest news regarding Mental Health.
+* For authentication, firebase authentication has been used.
 * The main purpose of this website is to help people who are suffering from mental illness.
 ## Available Scripts
 
